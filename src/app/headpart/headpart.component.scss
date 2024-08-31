@@ -1,0 +1,77 @@
+.container{
+       display: flex;
+       .header{
+              //       position: sticky;
+              //       top: 0px;
+              position: fixed;
+              z-index: 2;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+              background-color: rgb(19 25 33);
+              width: 100%;
+              .amazonlogo{
+                     img{
+                            width: 100%;
+                            height: 100%;
+                     }
+              }
+              .searchinput{
+                     position: relative;
+                     display: flex;
+                     align-items: center;
+                     input{
+                            padding: 10px;
+                            width: 270px;
+                            font-size: larger;
+                     }
+                     .searchIcon{
+                            position: absolute;
+                            right: 4px;
+                            top: 20px;
+                     }
+              }
+              .name{
+                     color: white;
+              }
+              .cur{
+                     cursor: pointer;
+              }
+              .cart{
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                     position: relative;
+                     width: 50px;
+                     .cartcount{
+                            background-color: red;
+                            position: absolute;
+                            top: 5px;
+                            right: 13px;
+                            width: 15px;
+                            padding: 2px;
+                            border-radius: 50%;
+                            color: white;
+                            text-align: center;
+                            font-size: small;
+                     
+              }
+                     i{
+                            position: absolute;
+                            bottom: 12px;
+                     }
+              }
+              // .itemm{
+              //        color: white;
+              //        padding: 20px;
+              //        cursor: pointer;
+              //        &.active{
+              //               background-color: rgb(52, 110, 7);
+              //        }
+              //        &.deactive{
+              //               background-color: black;
+              //        }
+
+              // }
+       }
+}

@@ -1,0 +1,27 @@
+
+<div class="container">       
+       <div class="header">
+              <div class="amazonlogo cur" (click)="renderToHome()">
+                     <img src="./../../assets/images/amazonlogo.PNG" alt="">
+              </div>
+              <div class="searchinput">
+                     <input type="text" (keydown)="searching()" placeholder="Search here" (keyup)="searching()" [(ngModel)]="search">
+                     <div class="searchIcon">
+                            <i class="fa fa-search" style="font-size:20px;color:red;" aria-hidden="true"></i>
+                     </div>
+              </div>
+              <div class="name user cur">
+                     <h3>{{ UserName}}</h3>
+              </div>
+              <div class="name logout cur" (click)="renderToLogout()">
+                     <h3>Logout</h3>
+              </div>
+              <div class="cart cur" (click)="renderToCart()">
+                     <div class="cartcount" *ngIf="cartlength!=0">{{cartlength}}</div>
+                     <!-- <div class="cartcount">14</div> -->
+                     <i class="fa fa-shopping-cart" style="font-size:30px;color:rgb(234, 133, 9);" aria-hidden="true"></i>
+              </div>
+
+       </div>
+       
+</div> 

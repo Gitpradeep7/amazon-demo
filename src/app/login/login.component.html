@@ -1,0 +1,17 @@
+<div class="container">
+       <h1>Login Page</h1>
+       <form action="" [formGroup]="login" class="login"  (ngSubmit)="onlogin()">
+              <label for="">Email</label>
+              <input type="email" formControlName="email" [(ngModel)]="emailId" (keyup)="checkEmail()" (keydown)="checkEmail()">
+              <div class="err" *ngIf="login.controls['email'].touched && !login.controls['email'].value"  >Required</div>
+              <div class="err" *ngIf="login.controls['email'].invalid && login.controls['email'].dirty && login.controls['email'].value!=''"> Enter valid Email</div>
+              <label for="">Password</label>
+              <input type="password" formControlName="password">
+              <div class="err" *ngIf="login.controls['password'].touched && !login.controls['password'].value"  >Required</div>
+              <div class="err" *ngIf="login.controls['password'].invalid && login.controls['password'].dirty && login.controls['password'].value!=''"> Enter atleast 8 Character </div>
+              <button [disabled]="login.invalid" >Login</button>
+       </form>
+</div>
+<div class="renderToSignUp">
+       <button (click)="renderToSU()">Sign Up Page</button>
+</div>

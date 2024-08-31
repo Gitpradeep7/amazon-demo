@@ -1,0 +1,29 @@
+.container, .login{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       h1{
+              color: green;
+       }
+       .login{
+              margin: 5px;
+              label, input, button{
+                     margin: 5px;
+                     padding: 10px;
+              }
+              .err{
+                     color: red;
+              }
+       }
+}
+.renderToSignUp{
+       position: absolute;
+       left: 160px;
+       top: 200px;
+       button{
+       background-color: #2466f5;
+       padding: 10px 40px;
+       color: white;
+       }
+}

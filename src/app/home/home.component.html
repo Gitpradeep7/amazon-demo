@@ -1,0 +1,31 @@
+<app-headpart [cartlength]="cartlen" (searchh)="displaySearch($event)"></app-headpart>
+<!-- <div class="sideNav" *ngIf="flag">
+       <div class="side" *ngFor="let name of headpartMenu" (click)="list(name)">{{name}}</div>
+</div> -->
+<div class="main">
+       <div class="sideNav" >
+              <div class="side" [ngClass]="name == current ? 'active':'deactive'" *ngFor="let name of headpartMenu" (click)="list(name)">{{name}}</div>
+       </div>
+       <!-- <div class="searchinput">
+              <input type="text" (keydown)="searching()" placeholder="Search here" (keyup)="searching()" [(ngModel)]="search">
+       </div> -->
+       <div class="content">
+              <div class="cards" *ngFor="let item of data;">
+               <!-- <h1>{{item.category}}</h1> -->
+                     <div class="img">
+                            <img src={{item.image}} >
+                     </div>
+                     <div class="prodDetails">
+                     <span>{{item.title}}</span>
+                     <h3>Rs {{item.price}} /-</h3>
+                     <p>Quantity: {{item.rating.count}} pieces</p>
+                     <p>{{item.rating.rate}} out of 5 Ratings</p>
+                     <!-- <progress id="file" value={{item.rating.rate}} max="5">  </progress> -->
+                     <button (click)="addToCart(item)">+</button>
+                     <button (click)="remove(item)" [disabled]="!(removeBoolean && item.id == id)">-</button>
+              </div>
+              </div>
+       </div>
+       <div class="err" *ngIf="data.length==0">No Searching records found</div>
+     
+</div>

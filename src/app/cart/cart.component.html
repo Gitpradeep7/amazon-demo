@@ -1,0 +1,40 @@
+<app-headpart [cartlength]="cartlength"></app-headpart>
+<div class="container">
+       <div class="message" *ngIf="cartData.length==0">
+              <h1>The Cart is Empty</h1>
+       </div>
+       <div class="content">
+              <div class="cards" *ngFor="let item of cartData;">
+                     <span class="count">
+                            <h3>{{item.counting}}</h3>
+                     </span>
+                     <div class="img">
+                            <img src={{item.image}}>
+                     </div>
+                     <div class="descrip">
+                            <h1>{{item.category}}</h1>
+                            <span class="title">{{item.title}}</span>
+                            <h3>Rs {{item.price * item.counting}} /-</h3>
+                            <p>{{item.rating.rate}} out of 5 Ratings</p>
+                            <button class=" btn remove" (click)="removeFromCart(item)">Remove</button>
+                            <button class='btn pay' (click)="payment(item)">Pay</button>
+                     </div>
+                     <div class="paymentCard" *ngIf="paymentFlag && item.id == paidItem.id">
+                            <div class="img">
+                                   <img src={{paidItem.image}} alt="">
+                            </div>
+                            <div class="paymentDetail">
+                                   <h3>Pay : {{paidItem.price * paidItem.counting}}</h3>
+                                   <div class="paylogos">
+                                          <div class="logo phonepe"><a href="https://www.phonepe.com/"><img src="./../../assets/images/phonepe.PNG" alt=""></a></div>
+                                          <div class="logo gpay"><a href="https://pay.google.com/intl/en_in/about/"><img src="./../../assets/images/gpayLogo.png" alt=""></a></div>
+
+                                   </div>
+                            </div>
+                            <div class="remove" (click)="paymentFlag=false">
+                                   X
+                            </div>
+                     </div>
+              </div>
+       </div>
+</div>

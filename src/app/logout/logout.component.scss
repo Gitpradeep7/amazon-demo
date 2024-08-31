@@ -1,0 +1,19 @@
+.main{
+       margin-top: 60px;
+.logout{
+       display: flex;
+       justify-content: center;
+       .btn{
+              margin: 20px;
+              padding: 15px;
+              cursor: pointer;
+              &.red{
+                     background-color: red;
+
+              }
+              &.green{
+                     background-color: green;
+              }
+       }
+}
+}

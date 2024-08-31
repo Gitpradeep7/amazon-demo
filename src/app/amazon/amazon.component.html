@@ -1,0 +1,20 @@
+<app-headpart></app-headpart>
+<div class="sideNav" >
+       <div class="side" [ngClass]="name == current ? 'active':'deactive'" *ngFor="let name of headpartMenu" (click)="list(name)">{{name}}</div>
+</div>
+<!-- [ngClass]="item.toLowerCase() == current ? 'active':'deactive'" -->
+<div class="main">
+       <div class="content">
+              <div class="cards" *ngFor="let item of data;">
+                     <h3>{{item.counting}}++</h3>
+                     <h1>{{item.category}}</h1>
+                     <img src={{item.image}} >
+                     <h3>{{item.title}}</h3>
+                     <h3>Rs {{item.price}} /-</h3>
+                     <p>Left: {{item.rating.count}} pieces</p>
+                     <p>{{item.rating.rate}} out of 5 Ratings</p>
+                     <button (click)="addToCart(item)">Add To Cart</button>
+                     <p>{{item.description}}</p>
+              </div>
+       </div>
+</div>

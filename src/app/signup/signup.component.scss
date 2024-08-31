@@ -1,0 +1,37 @@
+.container{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+.lab{
+       padding: 10px;
+       label, input{
+              padding: 10px;
+              // text-align: center;
+       }
+       .err{
+              color: red;
+
+       }
+       h1{
+              color: green;
+       }
+}
+.btn{
+       background-color: blue;
+       color: white;
+      &.btn:disabled{
+       background-color: rgb(38, 38, 75);
+      }
+}
+.login {
+       position: absolute;
+       left: 160px;
+       top: 200px;
+       input{
+       background-color: #2466f5;
+       padding: 10px 40px;
+       color: white;
+       }
+}
+}

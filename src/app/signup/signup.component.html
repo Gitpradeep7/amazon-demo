@@ -1,0 +1,60 @@
+<div class="container">
+        <div class="lab"><h1>Register</h1></div>
+       <form [formGroup]="signup" (ngSubmit)="onSubmit()">
+              <div class="lab">
+                     <label>First Name</label><br>
+                     <input  formControlName="fname" (keyup)="checkName($event)" (keydown)="checkName($event)" type="text">
+              
+                     <div class="err" *ngIf="signup.controls['fname'].touched && !signup.controls['fname'].value"> Required</div>
+                     <div class="err" *ngIf="signup.controls['fname'].invalid && signup.controls['fname'].dirty && signup.controls['fname'].value!=''"> Enter less than 15 Character</div>
+
+              </div>
+              <div class="lab">
+                     <label >Last Name</label><br>
+                     <input formControlName="lname" (keyup)="checkName($event)" (keydown)="checkName($event)" type="text">
+       
+                     <div class="err" *ngIf="signup.controls['lname'].touched && !signup.controls['lname'].value"> Required</div>
+                     <div class="err" *ngIf="signup.controls['lname'].invalid && signup.controls['lname'].dirty && signup.controls['lname'].value!=''"> Enter less than 15 Character</div>
+              </div>
+              <div class="lab">
+                     <label >Phone Number</label><br>
+                     <input formControlName="phoneNo" maxlength="10" (keyup)="checkNum($event)" [(ngModel)]="ph" (keydown)="checkNum($event)" type="text">
+       
+                     <div class="err" *ngIf="signup.controls['phoneNo'].touched && !signup.controls['phoneNo'].value"> Required</div>
+                     <div class="err" *ngIf="signup.controls['phoneNo'].invalid && signup.controls['phoneNo'].dirty && signup.controls['phoneNo'].value!=''"> Enter 10 digits</div>
+              </div>
+
+              <div class="lab">
+                     <label >Email ID</label><br>
+                     <input formControlName="emailid" type="Email"[(ngModel)]="em" (keyup)="checkEmail()" (keydown)="checkEmail()">
+              
+                     <div class="err" *ngIf="signup.controls['emailid'].touched && !signup.controls['emailid'].value"> Required </div>
+                     <div class="err" *ngIf="signup.controls['emailid'].invalid && signup.controls['emailid'].dirty && signup.controls['emailid'].value!=''"> Enter valid Email</div>
+
+              </div>
+              <div class="lab">
+                     <label >Password</label><br>
+                     <input formControlName="password" type="password">
+                     
+                     <div class="err" *ngIf="signup.controls['password'].touched && !signup.controls['password'].value"> Required </div>
+                     <div class="err" *ngIf="signup.controls['password'].invalid && signup.controls['password'].dirty && signup.controls['password'].value!=''"> Enter atleast 8 Character </div>
+
+
+              </div>
+              <div class="lab">
+                     <label  >Confirm Password</label><br>
+                     <input formControlName="Conpassword" (keyup)="comparePass()"  type="password">
+              
+                     <div class="err">{{message}}</div>
+                     <div class="err" *ngIf="signup.controls['Conpassword'].touched && !signup.controls['Conpassword'].value"> Required </div>
+                     <div class="err" *ngIf="signup.controls['password'].value!=signup.controls['Conpassword'].value && signup.controls['Conpassword'].dirty"> Match the password </div>
+                     <div class="err" *ngIf="signup.controls['Conpassword'].invalid && signup.controls['Conpassword'].dirty && signup.controls['Conpassword'].value!=''" > Enter atleast 8 Character</div>
+
+              </div>
+            {{passFlag}}
+              <div class="lab"><input type="submit" class="btn" [disabled]="(signup.invalid || passFlag || !emailboolean) " value="signup" ></div>
+       
+       </form>
+
+       <div class="login"><input type="submit" value="Login page" (click)="goToLogin()"></div>
+</div>

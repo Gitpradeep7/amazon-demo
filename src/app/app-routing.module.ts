@@ -1,0 +1,23 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { CartComponent } from './cart/cart.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AmazonComponent } from './amazon/amazon.component';
+
+const routes: Routes = [{ path: '',redirectTo: '/signup',pathMatch: 'full',}
+  ,{path: 'signup', component: SignupComponent},
+  {path: 'login', component:LoginComponent},
+  {path:'home', component:HomeComponent },
+  {path: 'cart',component:CartComponent},
+  {path:'logout',component:LogoutComponent},
+  {path:'amazon',component:AmazonComponent}
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
