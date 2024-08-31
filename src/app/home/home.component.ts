@@ -55,6 +55,7 @@ export class HomeComponent {
     this.data = this.data.filter((v:any)=>v.category.includes(this.listName.toLowerCase()) && v.category.startsWith(this.listName.toLowerCase()))
     }
     else{
+      
       this.data = this.oriData;
       this.displaySearch(this.search)
     }
